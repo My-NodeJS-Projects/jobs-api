@@ -36,6 +36,9 @@ app.use(
 const connectDB = require('./db/connect')
 
 // routes
+app.get('/', (req, res) => {
+  res.send('Job api')
+})
 app.use('/api/v1/auth', authRouter)
 app.use('/api/v1/jobs', authenticationMiddleware, jobRouter)
 
